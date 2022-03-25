@@ -13,10 +13,12 @@ struct ContentView: View {
 	// MARK: -  BODY
 	var body: some View {
 		TabView {
-			Text("Screen 1")
+			NavigationView {
+				FeedView()
+			}
 				.tabItem {
 					Image(systemName: "book.fill")
-					Text("소식")
+					Text("포스트")
 				}
 			
 			Text("Screen 2")

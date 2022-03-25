@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8172683527EDA13100024633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8172683427EDA13000024633 /* LaunchScreen.storyboard */; };
 		8172683A27EDA5E900024633 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172683927EDA5E900024633 /* Extension.swift */; };
+		8172683E27EDB28200024633 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172683D27EDB28200024633 /* FeedView.swift */; };
+		8172684027EDB37100024633 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172683F27EDB37100024633 /* PostView.swift */; };
 		818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C766A27ED8ACA001DB2A7 /* LovelyPetApp.swift */; };
 		818C766D27ED8ACA001DB2A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C766C27ED8ACA001DB2A7 /* ContentView.swift */; };
 		818C766F27ED8ACB001DB2A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818C766E27ED8ACB001DB2A7 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		8172683427EDA13000024633 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8172683927EDA5E900024633 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		8172683D27EDB28200024633 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		8172683F27EDB37100024633 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		818C766727ED8ACA001DB2A7 /* LovelyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LovelyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		818C766A27ED8ACA001DB2A7 /* LovelyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LovelyPetApp.swift; sourceTree = "<group>"; };
 		818C766C27ED8ACA001DB2A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		8172683227ED998400024633 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				8172683F27EDB37100024633 /* PostView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		8172683327ED999100024633 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8172683D27EDB28200024633 /* FeedView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -216,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8172683E27EDB28200024633 /* FeedView.swift in Sources */,
 				8172683A27EDA5E900024633 /* Extension.swift in Sources */,
 				818C766D27ED8ACA001DB2A7 /* ContentView.swift in Sources */,
+				8172684027EDB37100024633 /* PostView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
