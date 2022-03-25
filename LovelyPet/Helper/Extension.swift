@@ -1,111 +1,76 @@
-### 🔷 1.Adding the tab bar - TabView
+//
+//  Extension.swift
+//  LovelyPet
+//
+//  Created by Jacob Ko on 2022/03/25.
+//
 
-```swift
-// in ContentView
-struct ContentView: View {
-// MARK: -  PROPERTY
-
-// MARK: -  BODY
-var body: some View {
-TabView {
-  Text("Screen 1")
-    .tabItem {
-      Image(systemName: "book.fill")
-      Text("소식")
-    }
-
-  Text("Screen 2")
-    .tabItem {
-      Image(systemName: "magnifyingglass")
-      Text("둘러보기")
-    }
-
-  Text("Screen 3")
-    .tabItem {
-      Image(systemName: "square.and.arrow.up.fill")
-      Text("사진 올리기")
-    }
-
-  Text("Screen 4")
-    .tabItem {
-      Image(systemName: "person.fill")
-      Text("내 계정")
-    }
-
-} //: TAB
-.accentColor(Color.MyTheme.purpleColor)
-}
-}
-```
-
-```swift
-// in Extension
 import Foundation
 import SwiftUI
 
 // MARK: -  Color
 extension Color {
-struct MyTheme {
-  static var purpleColor: Color {
-    return Color("Purple")
-  }
-
-  static var yellowColor: Color {
-    return Color("Yellow")
-  }
-
-  static var beigeColor: Color {
-    return Color("Beige")
-  }
-}
+	struct MyTheme {
+		static var purpleColor: Color {
+			return Color("Purple")
+		}
+		
+		static var yellowColor: Color {
+			return Color("Yellow")
+		}
+		
+		static var beigeColor: Color {
+			return Color("Beige")
+		}
+	}
 }
 
 
 // MARK: -  Custom Alignment
 
 extension View {
-
+	
 	// MARK: -  Vertical Center
 	func vCenter() -> some View {
 		self.frame(maxHeight: .infinity, alignment: .center)
 	}
-
+	
 	// MARK: -  Vertical Top
 	func vTop() -> some View {
 		self.frame(maxHeight: .infinity, alignment: .top)
 	}
-
+	
 	// MARK: -  Vertical Bottom
 	func vBottom() -> some View {
 		self.frame(maxHeight: .infinity, alignment: .bottom)
 	}
-
+	
 	// MARK: -  Horizontal Center
 	func hCenter() -> some View {
 		self.frame(maxWidth: .infinity, alignment: .center)
 	}
-
+	
 	// MARK: -  Horizontal Leading
 	func hLeading() -> some View {
 		self.frame(maxWidth: .infinity, alignment: .leading)
 	}
-
+	
 	// MARK: -  Horizontal Trailing
 	func hTrailing() -> some View {
 		self.frame(maxWidth: .infinity, alignment: .trailing)
 	}
-
+	
 	// MARK: -  Responsive Size
 	func getReact() -> CGRect {
 		return UIScreen.main.bounds
 	}
-
+	
 	// MARK: -  Get safeArea
 	func getSafeArea() -> UIEdgeInsets {
 		guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
 			return .zero
 		}
-
+		
 		guard let safeArea = screen.windows.first?.safeAreaInsets else {
 			return .zero
 		}
@@ -113,6 +78,3 @@ extension View {
 	}
 }
 
-```
-
-<img width="350" alt="image" src="https://user-images.githubusercontent.com/28912774/160075320-d59af40b-30a9-4b05-81c6-c6061d91fecb.gif">
