@@ -14,6 +14,10 @@ class PostViewModel: ObservableObject {
 	
 	@Published var dataArray = [PostModel]()
 	
+	// CommentView
+	@State var submissionText: String = ""
+	
+	
 	// MARK: -  INIT
 	init() {
 		print("Fetch from DB here")

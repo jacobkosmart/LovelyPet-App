@@ -15,6 +15,7 @@
 		818C766D27ED8ACA001DB2A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818C766C27ED8ACA001DB2A7 /* ContentView.swift */; };
 		818C766F27ED8ACB001DB2A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818C766E27ED8ACB001DB2A7 /* Assets.xcassets */; };
 		818C767227ED8ACB001DB2A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 818C767127ED8ACB001DB2A7 /* Preview Assets.xcassets */; };
+		81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEE31427EEE0F000AC4363 /* CommentsView.swift */; };
 		81C9B15D27EE8F8F00FF1458 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15C27EE8F8F00FF1458 /* PostModel.swift */; };
 		81C9B15F27EE91A400FF1458 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15E27EE91A400FF1458 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		818C766C27ED8ACA001DB2A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		818C766E27ED8ACB001DB2A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		818C767127ED8ACB001DB2A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81BEE31427EEE0F000AC4363 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		81C9B15C27EE8F8F00FF1458 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		81C9B15E27EE91A400FF1458 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8172683D27EDB28200024633 /* FeedView.swift */,
+				81BEE31427EEE0F000AC4363 /* CommentsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				8172683A27EDA5E900024633 /* Extension.swift in Sources */,
 				818C766D27ED8ACA001DB2A7 /* ContentView.swift in Sources */,
 				8172684027EDB37100024633 /* PostView.swift in Sources */,
+				81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
