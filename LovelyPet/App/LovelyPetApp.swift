@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct LovelyPetApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	// MARK: -  PROPERTY
+	@StateObject private var vm :PostViewModel = PostViewModel()
+	// MARK: -  INIT
+	
+	// MARK: -  BODY
+	var body: some Scene {
+		WindowGroup {
+			ContentView()
+				.environmentObject(vm)
+		}
+	}
 }

@@ -9,15 +9,15 @@ import SwiftUI
 
 struct FeedView: View {
 	// MARK: -  PROPERTY
-	
+	@EnvironmentObject private var vm: PostViewModel
 	// MARK: -  BODY
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
-			PostView()
-			PostView()
-			PostView()
-			PostView()
-			PostView()
+			LazyVStack {
+				ForEach(vm.dataArray, id: \.self) {
+					PostView(post: $0)
+				} //: LOOP
+			} //: LAZYVSTACK
 		} //: SCROLL
 		.navigationTitle("포스트")
 		.navigationBarTitleDisplayMode(.inline)
@@ -29,6 +29,7 @@ struct FeedView_Previews: PreviewProvider {
 	static var previews: some View {
 		NavigationView {
 			FeedView()
+				.environmentObject(PostViewModel())
 		}
 	}
 }

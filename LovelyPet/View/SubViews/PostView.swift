@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostView: View {
 	// MARK: -  PROPERTY
+	@State var post: PostModel
 	
 	// MARK: -  BODY
 	var body: some View {
@@ -22,7 +23,7 @@ struct PostView: View {
 					.frame(width: 30, height: 30, alignment: .center)
 				.cornerRadius(15)
 				
-				Text("User name here")
+				Text(post.username)
 					.font(.callout)
 					.fontWeight(.medium)
 					.foregroundColor(.primary)
@@ -55,19 +56,23 @@ struct PostView: View {
 			.hLeading()
 			.padding(10)
 			
-			HStack {
-				Text("This is the Caption for the photo!")
-			} //: HSTACK
-			.hLeading()
-			.padding(10)
+			// caption type 이 optional 이니까 값이 있는 상태에서만 값에 등록 시킴
+			if let caption = post.caption {
+				HStack {
+					Text(caption)
+				} //: HSTACK
+				.hLeading()
+				.padding(10)
+			}
 		} //: VSTACK
 	}
 }
 
 // MARK: -  PREVIEW
 struct PostView_Previews: PreviewProvider {
+	static var post: PostModel = PostModel( postID: "", userID: "", username: "Jacob", caption: "This is the Test", dateCreated: Date(), likeCount: 0, likedByUser: false)
 	static var previews: some View {
-		PostView()
+		PostView(post: post)
 			.previewLayout(.sizeThatFits)
 	}
 }
