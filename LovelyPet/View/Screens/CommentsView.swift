@@ -14,10 +14,11 @@ struct CommentsView: View {
 	var body: some View {
 		VStack {
 			ScrollView {
-				Text("Placeholder")
-				Text("Placeholder")
-				Text("Placeholder")
-				Text("Placeholder")
+				LazyVStack {
+					ForEach(vm.commentArray, id: \.self) {
+						MessageView(comment: $0)
+					}
+				} //: LAZYVSTACK
 			} //: SCROLL
 			
 			HStack {
@@ -31,6 +32,7 @@ struct CommentsView: View {
 				
 				Button {
 					
+					vm.submissionText = ""
 				} label: {
 					Image(systemName: "paperplane.fill")
 						.font(.title2)
@@ -41,6 +43,12 @@ struct CommentsView: View {
 		} //: VSTACK
 		.navigationBarTitle("댓글 보기")
 		.navigationBarTitleDisplayMode(.inline)
+		.onAppear {
+			vm.getComments()
+		}
+		.onDisappear {
+			vm.commentArray = []
+		}
 	}
 }
 

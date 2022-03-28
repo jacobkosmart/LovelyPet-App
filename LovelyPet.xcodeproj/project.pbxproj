@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81127F5F27F1C6F1001E78F9 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81127F5E27F1C6F1001E78F9 /* MessageView.swift */; };
+		81127F6127F1C848001E78F9 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81127F6027F1C848001E78F9 /* CommentModel.swift */; };
 		8172683527EDA13100024633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8172683427EDA13000024633 /* LaunchScreen.storyboard */; };
 		8172683A27EDA5E900024633 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172683927EDA5E900024633 /* Extension.swift */; };
 		8172683E27EDB28200024633 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172683D27EDB28200024633 /* FeedView.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81127F5E27F1C6F1001E78F9 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		81127F6027F1C848001E78F9 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		8172683427EDA13000024633 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8172683927EDA5E900024633 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8172683D27EDB28200024633 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				81C9B15C27EE8F8F00FF1458 /* PostModel.swift */,
+				81127F6027F1C848001E78F9 /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8172683F27EDB37100024633 /* PostView.swift */,
+				81127F5E27F1C6F1001E78F9 /* MessageView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -234,9 +240,11 @@
 				8172683E27EDB28200024633 /* FeedView.swift in Sources */,
 				81C9B15F27EE91A400FF1458 /* PostViewModel.swift in Sources */,
 				81C9B15D27EE8F8F00FF1458 /* PostModel.swift in Sources */,
+				81127F5F27F1C6F1001E78F9 /* MessageView.swift in Sources */,
 				8172683A27EDA5E900024633 /* Extension.swift in Sources */,
 				818C766D27ED8ACA001DB2A7 /* ContentView.swift in Sources */,
 				8172684027EDB37100024633 /* PostView.swift in Sources */,
+				81127F6127F1C848001E78F9 /* CommentModel.swift in Sources */,
 				81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
 			);
