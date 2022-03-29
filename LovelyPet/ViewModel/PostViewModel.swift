@@ -18,6 +18,11 @@ class PostViewModel: ObservableObject {
 	@Published var submissionText: String = ""
 	@Published var commentArray = [CommentModel]()
 	
+	// CaouseView
+	@Published var selection: Int = 1
+	@Published var timerAdded: Bool = false
+	var maxCount: Int = 8
+	
 	// MARK: -  INIT
 	init() {
 		print("Fetch from DB here")
@@ -40,5 +45,19 @@ class PostViewModel: ObservableObject {
 		let comment4 = CommentModel(commentID: "", userID: "", username: "Christ", content: "This is the fourth comment", dateCreated: Date())
 		
 		self.commentArray.append(contentsOf: [comment1, comment2, comment3, comment4])
+	}
+	
+	// CaouseView - automatic scroll photo
+	func addTimer() {
+		// 중복 방지를 위해서 true 값으로 바꿔 줌
+		self.timerAdded = true
+		let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
+			if self.selection == (self.maxCount - 1) {
+				self.selection = 1
+			} else {
+				self.selection += 1
+			}
+		}
+		timer.fire()
 	}
 }
