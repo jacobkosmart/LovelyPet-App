@@ -14,6 +14,7 @@ struct BrowseView: View {
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
 			CarouseView()
+			ImageGridView()
 		} //: SCROLL
 		.navigationBarTitle("둘러보기")
 		.navigationBarTitleDisplayMode(.inline)

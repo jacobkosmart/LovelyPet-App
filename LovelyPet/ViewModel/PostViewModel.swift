@@ -34,6 +34,11 @@ class PostViewModel: ObservableObject {
 		
 		self.dataArray.append(contentsOf: [post1, post2, post3, post4, post5])
 	}
+	
+	/// Use for single post selection
+	init(post: PostModel) {
+		self.dataArray.append(post)
+	}
 	// MARK: -  FUNCTION
 	
 	func getComments() {

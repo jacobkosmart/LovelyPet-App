@@ -1,15 +1,14 @@
 //
-//  FeedView.swift
+//  FeedViewWithComments.swift
 //  LovelyPet
 //
-//  Created by Jacob Ko on 2022/03/25.
+//  Created by Jacob Ko on 2022/03/31.
 //
 
 import SwiftUI
 
-struct FeedView: View {
+struct FeedViewWithComments: View {
 	// MARK: -  PROPERTY
-	// @EnvironmentObject private var vm: PostViewModel
 	@ObservedObject var posts: PostViewModel = PostViewModel()
 	var title: String
 	
@@ -18,8 +17,9 @@ struct FeedView: View {
 		ScrollView(.vertical, showsIndicators: false) {
 			LazyVStack {
 				ForEach(posts.dataArray, id: \.self) { post in
-					PostView(post: post, showHeaderAndFooter: true, showCommentBtn: true)
+					PostView(post: post, showHeaderAndFooter: true, showCommentBtn: false)
 				} //: LOOP
+				CommentsView()
 			} //: LAZYVSTACK
 		} //: SCROLL
 		.navigationTitle(title)
@@ -28,10 +28,13 @@ struct FeedView: View {
 }
 
 // MARK: -  PREVIEW
-struct FeedView_Previews: PreviewProvider {
+struct FeedViewWithComments_Previews: PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			FeedView(posts: PostViewModel(), title: "포스트")
+			FeedViewWithComments(posts: PostViewModel(), title: "Test")
 		}
 	}
 }
+
+
+

@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
 	// MARK: -  PROPERTY
+	@EnvironmentObject private var vm: PostViewModel
 	
 	// MARK: -  BODY
 	var body: some View {
 		TabView {
 			NavigationView {
-				FeedView()
+				FeedView(posts: vm, title: "포스트")
 			}
 				.tabItem {
 					Image(systemName: "book.fill")
 					Text("포스트")
 				}
-			
-			Text("Screen 2")
+			NavigationView {
+				BrowseView()
+			}
 				.tabItem {
 					Image(systemName: "magnifyingglass")
 					Text("둘러보기")

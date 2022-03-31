@@ -10,6 +10,7 @@ import SwiftUI
 struct CommentsView: View {
 	// MARK: -  PROPERTY
 	@EnvironmentObject private var vm : PostViewModel
+	
 	// MARK: -  BODY
 	var body: some View {
 		VStack {
