@@ -29,7 +29,7 @@ struct ContentView: View {
 					Text("둘러보기")
 				}
 			
-			Text("Screen 3")
+			UploadView()
 				.tabItem {
 					Image(systemName: "square.and.arrow.up.fill")
 					Text("사진 올리기")
