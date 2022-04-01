@@ -26,6 +26,7 @@
 		81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEE31427EEE0F000AC4363 /* CommentsView.swift */; };
 		81C9B15D27EE8F8F00FF1458 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15C27EE8F8F00FF1458 /* PostModel.swift */; };
 		81C9B15F27EE91A400FF1458 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15E27EE91A400FF1458 /* PostViewModel.swift */; };
+		81FA45E327F6875F00178C7B /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA45E227F6875F00178C7B /* PostImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		81BEE31427EEE0F000AC4363 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		81C9B15C27EE8F8F00FF1458 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		81C9B15E27EE91A400FF1458 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		81FA45E227F6875F00178C7B /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				81063DED27F5A829007DE048 /* FeedViewWithComments.swift */,
 				81063DEF27F5B275007DE048 /* UploadView.swift */,
 				81063DF127F5B658007DE048 /* ImagePicker.swift */,
+				81FA45E227F6875F00178C7B /* PostImageView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				81127F6127F1C848001E78F9 /* CommentModel.swift in Sources */,
 				81063DF227F5B658007DE048 /* ImagePicker.swift in Sources */,
 				81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */,
+				81FA45E327F6875F00178C7B /* PostImageView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

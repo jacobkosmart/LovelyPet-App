@@ -6,20 +6,18 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct UploadView: View {
 	// MARK: -  PROPERTY
-	@State var showImagePicker: Bool = false
-	@State var imageSelected: UIImage = UIImage(named: "logo")!
-	@State var sourceType: UIImagePickerController.SourceType = .camera
+	@EnvironmentObject private var vm : PostViewModel
+
 	// MARK: -  BODY
 	var body: some View {
 		ZStack {
 			VStack (spacing: 0) {
 				Button {
-					sourceType = UIImagePickerController.SourceType.camera
-					showImagePicker.toggle()
+					vm.sourceType = UIImagePickerController.SourceType.camera
+					vm.showImagePicker.toggle()
 				} label: {
 					Text("사진 촬영")
 						.font(.largeTitle)
@@ -30,8 +28,8 @@ struct UploadView: View {
 				.background(Color.MyTheme.purpleColor)
 				
 				Button {
-					sourceType = UIImagePickerController.SourceType.photoLibrary
-					showImagePicker.toggle()
+					vm.sourceType = UIImagePickerController.SourceType.photoLibrary
+					vm.showImagePicker.toggle()
 				} label: {
 					Text("사진 가져오기")
 						.font(.largeTitle)
@@ -42,9 +40,9 @@ struct UploadView: View {
 				.background(Color.MyTheme.yellowColor)
 
 			} //: VSTACK
-			.sheet(isPresented: $showImagePicker) {
-				ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
-			}
+			.sheet(isPresented: $vm.showImagePicker, onDismiss: vm.segueToPostImageView, content: {
+				ImagePicker(imageSelected: $vm.imageSelected, sourceType: $vm.sourceType)
+			})
 			
 			// Logo
 			Image("logo.transparent")
@@ -52,6 +50,9 @@ struct UploadView: View {
 				.scaledToFit()
 				.frame(width: 100, height: 100)
 				.shadow(radius: 20)
+				.fullScreenCover(isPresented: $vm.showPostImageView) {
+					PostImageView(imageSelected: $vm.imageSelected)
+				}
 		} //: ZSTACK
 		.ignoresSafeArea(edges: .top)
 	}
@@ -61,5 +62,6 @@ struct UploadView: View {
 struct UploadView_Previews: PreviewProvider {
 	static var previews: some View {
 		UploadView()
+			.environmentObject(PostViewModel())
 	}
 }
