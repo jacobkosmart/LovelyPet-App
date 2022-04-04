@@ -34,6 +34,8 @@ class PostViewModel: ObservableObject {
 	// PostImageView
 	@Published var captionText: String = ""
 	
+
+	
 	// MARK: -  INIT
 	init() {
 		print("Fetch from DB here")

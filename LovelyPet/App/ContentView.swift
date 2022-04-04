@@ -35,12 +35,13 @@ struct ContentView: View {
 					Text("사진 올리기")
 				}
 			
-			Text("Screen 4")
+			NavigationView{
+				ProfileView(profileDisplayName: "내 프로필", isMyProfile: true, profileUserID: "")
+			}
 				.tabItem {
 					Image(systemName: "person.fill")
 					Text("내 계정")
 				}
-			
 		} //: TAB
 		.accentColor(Color.MyTheme.purpleColor)
 	}

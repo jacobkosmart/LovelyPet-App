@@ -20,16 +20,20 @@ struct PostView: View {
 			if showHeaderAndFooter {
 				HStack {
 					// Image
-					Image("dog1")
-						.resizable()
-						.scaledToFill()
-						.frame(width: 30, height: 30, alignment: .center)
-						.cornerRadius(15)
-					
-					Text(post.username)
-						.font(.callout)
-						.fontWeight(.medium)
-						.foregroundColor(.primary)
+					NavigationLink {
+						ProfileView(profileDisplayName: post.username, isMyProfile: false, profileUserID: post.userID)
+					} label: {
+						Image("dog1")
+							.resizable()
+							.scaledToFill()
+							.frame(width: 30, height: 30, alignment: .center)
+							.cornerRadius(15)
+						
+						Text(post.username)
+							.font(.callout)
+							.fontWeight(.medium)
+							.foregroundColor(.primary)
+					}
 					
 					Image(systemName: "ellipsis")
 						.font(.headline)
@@ -44,6 +48,7 @@ struct PostView: View {
 				.resizable()
 				.scaledToFit()
 				.cornerRadius(10)
+				.padding(.horizontal, 5)
 			
 			// MARK: -  FOOTER
 			if showHeaderAndFooter {
