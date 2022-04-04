@@ -35,8 +35,19 @@ struct SettingsView: View {
 				
 				// MARK: -  Section 2. Profile
 				GroupBox {
-					SettingsRowView(leftIcon: "pencil", text: "닉네임 변경", color: Color.MyTheme.purpleColor)
-					SettingsRowView(leftIcon: "text.quote", text: "나의 소개글", color: Color.MyTheme.purpleColor)
+					
+					NavigationLink {
+						SettingsEditTextView(submissionText: "현재 닉네임", title: "현재 닉네임", description: "닉네임을 변경 하기 원하시면 아래에서 입력 한 후에, 저장 버튼을 눌러 주세요", placeholder: "닉네임 입력은 여기 입니다")
+					} label: {
+						SettingsRowView(leftIcon: "pencil", text: "닉네임 변경", color: Color.MyTheme.purpleColor)
+					}
+					
+					NavigationLink {
+						SettingsEditTextView(submissionText: "나의 소개글", title: "나의 소개글", description: "나를 소개해 보세요", placeholder: "소개글을 변경하기 원하면 아래에서 입력한 후에, 저장 버튼을 눌러 주세요")
+					} label: {
+						SettingsRowView(leftIcon: "text.quote", text: "나의 소개글", color: Color.MyTheme.purpleColor)
+					}
+
 					SettingsRowView(leftIcon: "photo", text: "프로필 사진 변경", color: Color.MyTheme.purpleColor)
 					SettingsRowView(leftIcon: "figure.walk", text: "로그 아웃", color: Color.MyTheme.purpleColor)
 				} label: {
@@ -57,7 +68,8 @@ struct SettingsView: View {
 				
 				// MARK: -  Section 4. Sign off
 				GroupBox {
-					Text("러블리 펫은 여러분의 사랑으로 운영됩니다. \n All Rights Reserved \n © Jacob Ko \n 2022")
+					Text("러블리 펫은 여러분의 사랑으로 운영됩니다. \n All Rights Reserved \n © Jacob Ko \n2022")
+						.font(.footnote)
 						.foregroundColor(.gray)
 						.multilineTextAlignment(.center)
 						.frame(maxWidth: .infinity)

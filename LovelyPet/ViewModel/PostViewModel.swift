@@ -35,6 +35,7 @@ class PostViewModel: ObservableObject {
 	@Published var captionText: String = ""
 	
 
+
 	
 	// MARK: -  INIT
 	init() {

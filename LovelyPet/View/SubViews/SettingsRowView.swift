@@ -26,6 +26,8 @@ struct SettingsRowView: View {
 			.frame(width: 36, height: 36)
 			
 			Text(text)
+				.font(.headline)
+				.foregroundColor(.primary)
 			
 			Image(systemName: "chevron.right")
 				.font(.headline)
