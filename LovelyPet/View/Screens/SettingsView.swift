@@ -47,8 +47,13 @@ struct SettingsView: View {
 					} label: {
 						SettingsRowView(leftIcon: "text.quote", text: "나의 소개글", color: Color.MyTheme.purpleColor)
 					}
+					
+					NavigationLink {
+						SettingsEditImageView(title: "프로필 사진", description: "당신의 프로필 시진을 변경할 수 있습니다", seledtedImage: UIImage(named: "dog1")!)
+					} label: {
+						SettingsRowView(leftIcon: "photo", text: "프로필 사진 변경", color: Color.MyTheme.purpleColor)
+					}
 
-					SettingsRowView(leftIcon: "photo", text: "프로필 사진 변경", color: Color.MyTheme.purpleColor)
 					SettingsRowView(leftIcon: "figure.walk", text: "로그 아웃", color: Color.MyTheme.purpleColor)
 				} label: {
 					SettingsLabelView(labelText: "내 계정 설정", labelImage: "person.fill")
@@ -57,9 +62,24 @@ struct SettingsView: View {
 				
 				// MARK: -  SECTION 3. Application
 				GroupBox {
-					SettingsRowView(leftIcon: "folder.fill", text: "개인정보 보호", color: Color.MyTheme.yellowColor)
-					SettingsRowView(leftIcon: "folder.fill", text: "앱 사용 약관", color: Color.MyTheme.yellowColor)
-					SettingsRowView(leftIcon: "globe", text: "개발자 홈페이지", color: Color.MyTheme.yellowColor)
+					Button {
+						vm.openCustomURL(urlString: "https://jacobko.info")
+					} label: {
+						SettingsRowView(leftIcon: "folder.fill", text: "개인정보 보호", color: Color.MyTheme.yellowColor)
+					}
+					
+					Button {
+						vm.openCustomURL(urlString: "https://jacobko.info")
+					} label: {
+						SettingsRowView(leftIcon: "folder.fill", text: "앱 사용 약관", color: Color.MyTheme.yellowColor)
+					}
+					
+					Button {
+						vm.openCustomURL(urlString: "https://jacobko.info")
+					} label: {
+						SettingsRowView(leftIcon: "globe", text: "개발자 홈페이지", color: Color.MyTheme.yellowColor)
+					}
+
 				} label: {
 					SettingsLabelView(labelText: "앱 설정", labelImage: "apps.iphone")
 				} //: GROUP
@@ -81,7 +101,7 @@ struct SettingsView: View {
 			.navigationBarTitle("설정")
 			.navigationBarTitleDisplayMode(.large)
 			.navigationBarItems(
-				leading: Button(action: {
+				trailing: Button(action: {
 					presentationMode.wrappedValue.dismiss()
 				}, label: {
 					Image(systemName: "xmark")
