@@ -15,6 +15,10 @@ class PostViewModel: ObservableObject {
 	
 	@Published var dataArray = [PostModel]()
 	
+	
+	// contentView
+	@Published var currentUserID: String? = nil
+	
 	// CommentView
 	@Published var submissionText: String = ""
 	@Published var commentArray = [CommentModel]()

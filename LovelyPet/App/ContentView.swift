@@ -11,6 +11,7 @@ struct ContentView: View {
 	// MARK: -  PROPERTY
 	@EnvironmentObject private var vm: PostViewModel
 	
+	
 	// MARK: -  BODY
 	var body: some View {
 		TabView {
@@ -35,8 +36,14 @@ struct ContentView: View {
 					Text("사진 올리기")
 				}
 			
-			NavigationView{
-				ProfileView(profileDisplayName: "내 프로필", isMyProfile: true, profileUserID: "")
+			ZStack {
+				if vm.currentUserID != nil {
+					NavigationView{
+						ProfileView(profileDisplayName: "내 프로필", isMyProfile: true, profileUserID: "")
+					}
+				} else {
+					SignUpView()
+				}
 			}
 				.tabItem {
 					Image(systemName: "person.fill")
