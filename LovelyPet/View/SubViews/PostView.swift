@@ -12,8 +12,18 @@ struct PostView: View {
 	@State var post: PostModel
 	@State var animateLike: Bool = false
 	@State var addHeartAnimationToView: Bool
+	@State var postImage: UIImage = UIImage(named: "dog1")!
 	var showHeaderAndFooter: Bool
 	var showCommentBtn: Bool
+	
+	
+	// ActionSheet variables
+	@State var showActionSheet: Bool = false
+	@State var actionSheetType: PostActionSheetOption = .general
+	enum PostActionSheetOption {
+		case general
+		case reporting
+	}
 	
 	// MARK: -  BODY
 	var body: some View {
@@ -37,9 +47,18 @@ struct PostView: View {
 							.foregroundColor(.primary)
 					}
 					
-					Image(systemName: "ellipsis")
-						.font(.headline)
-						.hTrailing()
+					// share and report Btn
+					Button {
+						showActionSheet.toggle()
+					} label: {
+						Image(systemName: "ellipsis")
+							.font(.headline)
+							.hTrailing()
+					}
+					.actionSheet(isPresented: $showActionSheet) {
+						getAcrtionSheet()
+					}
+					.accentColor(.primary)
 					
 				} //: HSTACK
 				.padding(6)
@@ -47,7 +66,7 @@ struct PostView: View {
 			
 			// MARK: -  IMAGE
 			ZStack {
-				Image("dog1")
+				Image(uiImage: postImage)
 					.resizable()
 					.scaledToFit()
 					.cornerRadius(10)
@@ -77,7 +96,7 @@ struct PostView: View {
 					}
 					.accentColor(post.likedByUser ? .red : .primary)
 					
-					// MARK: -  Comment Icon
+					// Comment Icon
 					if showCommentBtn {
 						NavigationLink {
 							CommentsView()
@@ -88,8 +107,16 @@ struct PostView: View {
 								.foregroundColor(.primary)
 						}
 					}
-					Image (systemName: "paperplane")
-						.font(.title3)
+					
+					// Share Btn
+					Button {
+						sharePost()
+					} label: {
+						Image (systemName: "paperplane")
+							.font(.title3)
+					}
+					.accentColor(.primary)
+
 				} //: HSTACK
 				.hLeading()
 				.padding(10)
@@ -121,6 +148,54 @@ struct PostView: View {
 	func unlikePost() {
 		let updatedPost = PostModel(postID: post.postID, userID: post.userID, username: post.username, caption: post.caption, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
 		self.post = updatedPost
+	}
+	
+	func getAcrtionSheet() -> ActionSheet {
+		switch self.actionSheetType {
+		case .general:
+			return ActionSheet(title: Text("리포트 및 공유"), message: nil, buttons: [
+				.destructive(Text("리포트"), action: {
+					self.actionSheetType = .reporting
+					DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+						self.showActionSheet.toggle()
+					}
+				}),
+				.default(Text("공유"), action: {
+					sharePost()
+				}),
+				.cancel()
+			])
+		case .reporting:
+			return ActionSheet(title: Text("포스트 신고하기"), message: nil, buttons: [
+				.destructive(Text("이 게시물은 부적절한 포스트입니다"), action: {
+					reportPost(reason: "This is inappropriate post")
+				}),
+				.destructive(Text("이 게시물은 스펨성 광고 포스트 입니다"), action: {
+						reportPost(reason: "This is spam")
+					}),
+				.destructive(Text("이 게시물은 선정성 있는 포스트입니다"), action: {
+					reportPost(reason: "This is sexual post")
+				}),
+				.cancel({
+					self.actionSheetType = .general
+				})
+			])
+		}
+	}
+	
+	func reportPost(reason: String) {
+		print("Report Post Now")
+	}
+	
+	func sharePost() {
+		let message = "Check out this post on Lovely Pet"
+		let image = postImage
+		let link = URL(string: "https://www.jacobko.info")!
+		
+		let activityViewController = UIActivityViewController(activityItems: [message, image, link], applicationActivities: nil)
+		
+		let viewController = UIApplication.shared.windows.first?.rootViewController
+		viewController?.present(activityViewController, animated: true, completion: nil)
 	}
 }
 
