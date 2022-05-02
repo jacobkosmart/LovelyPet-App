@@ -34,9 +34,20 @@ class PostViewModel: ObservableObject {
 	@Published var sourceType: UIImagePickerController.SourceType = .camera
 	@Published var showPostImageView: Bool = false
 	
-	
 	// PostImageView
 	@Published var captionText: String = ""
+	
+	// SignUPView
+	@Published var showOnboarding: Bool = false
+	
+	// OnboardingView
+	@Published var showOnboardingPart2: Bool = false 
+	
+	// OnboardingViewPart2
+	@Published var displayName: String = ""
+	@Published var showImagePickerinOnboarding: Bool = false
+	@Published var imageSelectedinOnbording: UIImage = UIImage(named: "logo")!
+	@Published var sourceTypeinOnboarding: UIImagePickerController.SourceType = .photoLibrary
 	
 
 
@@ -104,5 +115,10 @@ class PostViewModel: ObservableObject {
 		if UIApplication.shared.canOpenURL(url) {
 			UIApplication.shared.open(url)
 		}
+	}
+	
+	// OnboardingViewPart2
+	func createProfile() {
+		print("CREATE PROFILE NOW")
 	}
 }

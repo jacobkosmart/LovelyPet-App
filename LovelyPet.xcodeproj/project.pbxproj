@@ -36,6 +36,7 @@
 		81E3948427FB06C3004D5D94 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3948327FB06C3004D5D94 /* SettingsEditTextView.swift */; };
 		81F8822F281F5C9B0083BFF2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F8822E281F5C9A0083BFF2 /* OnboardingView.swift */; };
 		81F88231281F5EB10083BFF2 /* SigninWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F88230281F5EB10083BFF2 /* SigninWithAppleButtonCustom.swift */; };
+		81F88233281F658F0083BFF2 /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F88232281F658E0083BFF2 /* OnboardingViewPart2.swift */; };
 		81FA45E327F6875F00178C7B /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA45E227F6875F00178C7B /* PostImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		81E3948327FB06C3004D5D94 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
 		81F8822E281F5C9A0083BFF2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		81F88230281F5EB10083BFF2 /* SigninWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleButtonCustom.swift; sourceTree = "<group>"; };
+		81F88232281F658E0083BFF2 /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
 		81FA45E227F6875F00178C7B /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				81C90D1E28162C9900045C87 /* SettingsEditImageView.swift */,
 				81CF0EBB281785E50080BA9D /* SignUpView.swift */,
 				81F8822E281F5C9A0083BFF2 /* OnboardingView.swift */,
+				81F88232281F658E0083BFF2 /* OnboardingViewPart2.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				81BEE31527EEE0F000AC4363 /* CommentsView.swift in Sources */,
 				81FA45E327F6875F00178C7B /* PostImageView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
+				81F88233281F658F0083BFF2 /* OnboardingViewPart2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

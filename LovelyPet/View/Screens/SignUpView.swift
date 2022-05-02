@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
 	// MARK: -  PROPERTY
+	
+	@EnvironmentObject var vm: PostViewModel
 	// MARK: -  BODY
 	var body: some View {
 		VStack(spacing: 20) {
@@ -31,7 +33,7 @@ struct SignUpView: View {
 				.multilineTextAlignment(.center)
 			
 			Button {
-				
+				vm.showOnboarding.toggle()
 			} label: {
 				Text("로그인 / 회원가입")
 					.font(.headline)
@@ -51,6 +53,9 @@ struct SignUpView: View {
 		.padding(40)
 		.background(Color.MyTheme.yellowColor)
 		.ignoresSafeArea(edges: .top)
+		.fullScreenCover(isPresented: $vm.showOnboarding) {
+			OnboardingView()
+		}
 	}
 }
 
@@ -58,5 +63,6 @@ struct SignUpView: View {
 struct SignUpView_Previews: PreviewProvider {
 	static var previews: some View {
 		SignUpView()
+			.environmentObject(PostViewModel())
 	}
 }

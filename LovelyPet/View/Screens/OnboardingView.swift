@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OnboardingView: View {
 	// MARK: -  PROPERTY
+	@EnvironmentObject var vm: PostViewModel
+	@Environment(\.presentationMode) var presentationMode
+	
 	// MARK: -  BODY
 	var body: some View {
 		VStack(spacing: 10) {
@@ -32,7 +35,7 @@ struct OnboardingView: View {
 			
 			// Apple Signin
 			Button {
-				
+				vm.showOnboardingPart2.toggle()
 			} label: {
 				SigninWithAppleButtonCustom()
 					.frame(height: 60)
@@ -41,7 +44,7 @@ struct OnboardingView: View {
 			
 			// Google Signin
 			Button {
-				
+				vm.showOnboardingPart2.toggle()
 			} label: {
 				HStack {
 					Image(systemName: "g.circle")
@@ -55,12 +58,26 @@ struct OnboardingView: View {
 				.font(.system(size: 22, weight: .medium, design: .default))
 			}
 			.accentColor(Color.white)
+			
+			// guest Button
+			Button {
+				presentationMode.wrappedValue.dismiss()
+			} label: {
+				Text("게스트로 참여하기")
+					.font(.headline)
+					.fontWeight(.medium)
+					.padding()
+			}
+			.accentColor(.black)
 
 		} //: VSTACK
 		.padding(20)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.MyTheme.beigeColor)
 		.ignoresSafeArea()
+		.fullScreenCover(isPresented: $vm.showOnboardingPart2) {
+			OnboardingViewPart2()
+		}
 	}
 }
 
@@ -68,5 +85,6 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
 	static var previews: some View {
 		OnboardingView()
+			.environmentObject(PostViewModel())
 	}
 }
