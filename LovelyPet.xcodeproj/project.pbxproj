@@ -27,6 +27,7 @@
 		81C90D1F28162C9900045C87 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C90D1E28162C9900045C87 /* SettingsEditImageView.swift */; };
 		81C9B15D27EE8F8F00FF1458 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15C27EE8F8F00FF1458 /* PostModel.swift */; };
 		81C9B15F27EE91A400FF1458 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9B15E27EE91A400FF1458 /* PostViewModel.swift */; };
+		81CD278028200AFE0025D545 /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD277F28200AFE0025D545 /* LikeAnimationView.swift */; };
 		81CF0EBC281785E50080BA9D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF0EBB281785E50080BA9D /* SignUpView.swift */; };
 		81E3947827FABCCE004D5D94 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3947727FABCCE004D5D94 /* ProfileView.swift */; };
 		81E3947A27FABE63004D5D94 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E3947927FABE63004D5D94 /* ProfileHeaderView.swift */; };
@@ -63,6 +64,7 @@
 		81C90D1E28162C9900045C87 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
 		81C9B15C27EE8F8F00FF1458 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		81C9B15E27EE91A400FF1458 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		81CD277F28200AFE0025D545 /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		81CF0EBB281785E50080BA9D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		81E3947727FABCCE004D5D94 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = LovelyPet/View/Screens/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		81E3947927FABE63004D5D94 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				81E3947D27FAE8B5004D5D94 /* SettingsLabelView.swift */,
 				81E3948127FAEB92004D5D94 /* SettingsRowView.swift */,
 				81F88230281F5EB10083BFF2 /* SigninWithAppleButtonCustom.swift */,
+				81CD277F28200AFE0025D545 /* LikeAnimationView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				81FA45E327F6875F00178C7B /* PostImageView.swift in Sources */,
 				818C766B27ED8ACA001DB2A7 /* LovelyPetApp.swift in Sources */,
 				81F88233281F658F0083BFF2 /* OnboardingViewPart2.swift in Sources */,
+				81CD278028200AFE0025D545 /* LikeAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

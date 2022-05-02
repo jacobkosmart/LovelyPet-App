@@ -17,7 +17,7 @@ struct FeedViewWithComments: View {
 		ScrollView(.vertical, showsIndicators: false) {
 			LazyVStack {
 				ForEach(posts.dataArray, id: \.self) { post in
-					PostView(post: post, showHeaderAndFooter: true, showCommentBtn: false)
+					PostView(post: post, addHeartAnimationToView: false, showHeaderAndFooter: true, showCommentBtn: false)
 				} //: LOOP
 				CommentsView()
 			} //: LAZYVSTACK

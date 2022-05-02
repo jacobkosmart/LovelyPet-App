@@ -24,7 +24,7 @@ struct ImageGridView: View {
 			pinnedViews: []) {
 				ForEach(vm.dataArray, id: \.self) { post in
 					NavigationLink(destination: FeedViewWithComments(posts: PostViewModel(post: post), title: "포스트")) {
-						PostView(post: post, showHeaderAndFooter: false, showCommentBtn: false)
+						PostView(post: post, addHeartAnimationToView: false, showHeaderAndFooter: false, showCommentBtn: false)
 					}
 				} //: LOOP
 			}
